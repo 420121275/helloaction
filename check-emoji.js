@@ -3,7 +3,7 @@ const path = require('path');
  
 const markdownFiles = fs.readdirSync('.').filter(file => file.endsWith('.md'));
 
-//Ìí¼Ó×¢ÊÍ²âÊÔ
+//æ·»åŠ æ³¨é‡Šæµ‹è¯•
 markdownFiles.forEach(file => {
   const content = fs.readFileSync(path.join('.', file), 'utf8');
   if (content.includes(':') && !content.includes('github.com')) {
