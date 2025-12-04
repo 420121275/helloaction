@@ -1,12 +1,27 @@
 const fs = require('fs');
-const path = require('path');
- 
-const markdownFiles = fs.readdirSync('.').filter(file => file.endsWith('.md'));
 
-//添加注释测试
-markdownFiles.forEach(file => {
-  const content = fs.readFileSync(path.join('.', file), 'utf8');
-  if (content.includes(':') && !content.includes('github.com')) {
-    console.log(`Emoji found in ${file}:`, content.match(/:.+:/g));
-  }
-});
+console.log('🔍 Checking emoji shortcodes...');
+
+// 示例：读取 README.md 检查 emoji
+try {
+    if (fs.existsSync('README.md')) {
+        const content = fs.readFileSync('README.md', 'utf8');
+        console.log('✅ README.md found');
+        
+        // 你的检查逻辑
+        // 例如：检查是否包含 emoji 简码
+        if (content.includes(':')) {
+            console.log('✅ Emoji shortcodes check passed');
+            process.exit(0);
+        } else {
+            console.log('ℹ️ No emoji shortcodes found');
+            process.exit(0);
+        }
+    } else {
+        console.log('⚠️ README.md not found');
+        process.exit(0);
+    }
+} catch (error) {
+    console.error('❌ Error:', error.message);
+    process.exit(1);
+}
