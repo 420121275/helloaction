@@ -18,6 +18,4 @@ jobs:
         run: npm install
       
       - name: Check emoji shortcode references
-        run: |
-          chmod +x ./check-emoji.js
-          ./check-emoji.js
+        run: node check-emoji.js
