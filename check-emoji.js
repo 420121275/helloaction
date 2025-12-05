@@ -2,7 +2,7 @@ const fs = require('fs');
 
 console.log('🔍 Checking emoji shortcodes...');
 
-// 示例：读取 README.md 检查 emoji
+// 示例：读取 README.md 检查 emoji 123 branch
 try {
     if (fs.existsSync('README.md')) {
         const content = fs.readFileSync('README.md', 'utf8');
