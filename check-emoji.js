@@ -9,7 +9,7 @@ try {
         console.log('✅ README.md found');
         
         // 你的检查逻辑
-        // 例如：检查是否包含 emoji 简码
+        // 例如：检查是否包含 emoji 简码，main分支
         if (content.includes(':')) {
             console.log('✅ Emoji shortcodes check passed');
             process.exit(0);
